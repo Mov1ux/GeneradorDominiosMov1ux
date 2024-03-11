@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Rigo with Vanilla.js</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="./4geeks.ico" />
+  </head>
+  <body>
+    <div class="container-fluid text-center">
+      <h1 class="mt-5">Hello Rigo!</h1>
+      <img src="./rigo-baby.jpg" />
+      <p class="alert alert-danger mt-4">
+        Ringo is generating domain names to help your poor creativity
+      </p>
+      <div class="container-fluid text-center">
+        <button class="btn btn-primary" onclick="generar()">
+          Generate domain name
+        </button>
+        <div class="container-fluid text-center displayresult">
+          <h3 id="DomainName"></h3>
+        </div>
+      </div>
+      <div class="fixed-bottom p-4">
+        Made with ❤️ by
+        <a href="https://github.com/Mov1ux">Mov1ux</a>
+      </div>
+    </div>
+    <script>
+      function generar() {
+        let name = [
+          "tech",
+          "4weeks",
+          "mov1ux",
+          "array",
+          "loops",
+          "html",
+          "python",
+          "JS"
+        ];
+        let ext = [".com", ".es", ".info", ".org", ".dev"];
+
+        let generateName = name[Math.floor(Math.random() * name.length)];
+        let generateExt = ext[Math.floor(Math.random() * ext.length)];
+        let domainName = generateName + generateExt;
+        document.getElementById("DomainName").textContent =
+          "Nombre del dominio generado: " + domainName;
+        //return generateName + generateExt;
+      }
+    </script>
+  </body>
+</html>
